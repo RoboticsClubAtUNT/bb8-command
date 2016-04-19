@@ -1,0 +1,31 @@
+#sidenav {
+  width: $sidenavWidth;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background: #333;
+  #logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $sidenavWidth;
+    height: $sidenavWidth;
+    background: url('../imgs/BB8-App-Logo.png');
+    background-position: center;
+    background-size: cover;
+  }
+  #nav-items {
+    position: absolute;
+    top: $sidenavWidth;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+#main-view {
+  position: absolute;
+  top: 0;
+  left: $sidenavWidth;
+  right: 0;
+  bottom: 0;
+}
