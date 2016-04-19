@@ -8,6 +8,9 @@ const emberAppLocation = `file://${__dirname}/dist/index.html`;
 
 let mainWindow = null;
 
+var EventEmitter = require('./services/event-emitter.js');
+var eventEmitter = null;
+
 electron.crashReporter.start();
 
 app.on('window-all-closed', function onWindowAllClosed() {
@@ -20,6 +23,22 @@ app.on('ready', function onReady() {
     mainWindow = new BrowserWindow({
         width: 1024,
         height: 760
+    });
+
+    eventEmitter = new EventEmitter(mainWindow);
+
+    eventEmitter.on('test', function(res, data) {
+      console.log(data);
+      eventEmitter.emit('test', JSON.stringify({
+        data: {
+          type: 'test',
+          id: '001',
+          attributes: {
+            message: 'test message',
+            info: data
+          }
+        }
+      }));
     });
 
     delete mainWindow.module;

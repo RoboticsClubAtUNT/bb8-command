@@ -21,6 +21,12 @@ export default Ember.Service.extend({
    *                             a paramater. (function(res, data){})(res, data);
    * @return {[type]}            [description]
    */
+  once(event, callback) {
+    ipc.once(event, function(res, data) {
+      callback(data);
+    });
+  },
+
   on(event, callback) {
     ipc.on(event, function(res, data) {
       callback(data);
