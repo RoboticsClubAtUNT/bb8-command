@@ -4,6 +4,8 @@
   top: 0;
   bottom: 0;
   background: #333;
+  border-right: white thin solid;
+  z-index: 900;
   #logo {
     position: absolute;
     top: 0;
@@ -19,6 +21,33 @@
     top: $sidenavWidth;
     bottom: 0;
     width: 100%;
+    a {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      box-sizing: border-box;
+      color: white;
+      font-family:'Roboto Condensed', sans-serif;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      font-size: 14px;
+
+      &:hover {
+        background: #434343;
+      }
+      &.active {
+        color: $untGreen3;
+      }
+      i {
+        width: 25px;
+        font-size: 20px;
+        text-align: center;
+        margin-right: 10px;
+      }
+    }
   }
 }
 
@@ -28,4 +57,12 @@
   left: $sidenavWidth;
   right: 0;
   bottom: 0;
+}
+
+#robotics-club-website {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
