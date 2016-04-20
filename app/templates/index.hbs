@@ -1,15 +1,44 @@
-<h1>Dashboard</h1>
-<p>
-  Test text
-</p>
-<button type="button" name="button" {{action 'test'}}>Test</button>
-<button type="button" name="button" {{action 'getBluetoothList'}}>list</button>
-{{#each bluetoothList as |port|}}
-  <div class="">
-    {{port}}
+{{#step-card number="1" text="Connect to the 'BB-8 Access Point'" classNames="step-card"}}
+  <p>
+    In your computer's settings, please connect to the following Bluetooth Device:
+  </p>
+  <table>
+    <tr>
+      <th>
+        <i class="fa fa-bluetooth-b" aria-hidden="true"></i>
+        <span>Name</span>
+      </th>
+      <th>
+        <i class="fa fa-lock" aria-hidden="true"></i>
+        <span>PIN</span>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        BB-8 Access Point
+      </td>
+      <td>
+        4498
+      </td>
+    </tr>
+  </table>
+  <button type="button" name="button">I have succesfully connected!</button>
+{{/step-card}}
+{{#step-card number="2" text="Select the Appropriate Bluetooth Port" classNames="step-card"}}
+  <div>
+    Have the user connect to the appropriate bluetooth port.
   </div>
-{{else}}
-  <div class="">
-    No bluetooth ports are available.
-  </div>
-{{/each}}
+  <select class="" name="">
+    <option value="option">option</option>
+    <option value="option">option</option>
+    <option value="option">option</option>
+  </select>
+  <button type="button" name="button">Connect</button>
+{{/step-card}}
+{{#step-card number="3" text="Select Mode" classNames="step-card"}}
+  <button type="button" name="button">Command Mode</button>
+  <button type="button" name="button">Server Mode</button>
+{{/step-card}}
+{{#step-card number="4" text="Command BB-8 Bot" classNames="step-card"}}
+  Test
+{{/step-card}}

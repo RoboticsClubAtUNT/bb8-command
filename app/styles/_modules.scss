@@ -1,0 +1,54 @@
+.step-card {
+  width: 90%;
+  max-width: 450px;
+  padding: 15px;
+  background: white;
+  margin: 0 auto;
+  border: #ddd thin solid;
+  border-radius: 5px;
+  margin-bottom: 15px;
+
+  table {
+    margin: 0 auto;
+    width: 100%;
+    th {
+      text-align: left;
+      border-bottom: #ddd thin solid;
+      padding: 5px;
+      box-sizing: border-box;
+      i {
+        margin: 0 5px;
+      }
+    }
+    td {
+      padding: 5px;
+      box-sizing: border-box;
+    }
+  }
+
+  &-header {
+    font-size: 20px;
+    border-bottom: #ddd thin solid;
+    font-family: "Roboto Condensed", sans-serif;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+
+  &-number {
+    font-weight: bold;
+    padding-bottom: 15px;
+    width: 80px;
+  }
+
+  &-text {
+    font-weight: 400;
+    padding-bottom: 15px;
+    width: 100%;
+  }
+
+  &-main {
+    padding-top: 15px;
+  }
+}
