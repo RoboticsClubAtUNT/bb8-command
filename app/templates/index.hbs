@@ -3,3 +3,13 @@
   Test text
 </p>
 <button type="button" name="button" {{action 'test'}}>Test</button>
+<button type="button" name="button" {{action 'getBluetoothList'}}>list</button>
+{{#each bluetoothList as |port|}}
+  <div class="">
+    {{port}}
+  </div>
+{{else}}
+  <div class="">
+    No bluetooth ports are available.
+  </div>
+{{/each}}

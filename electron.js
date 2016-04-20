@@ -9,7 +9,10 @@ const emberAppLocation = `file://${__dirname}/dist/index.html`;
 let mainWindow = null;
 
 var EventEmitter = require('./services/event-emitter.js');
+var Bluetooth = require('./services/bluetooth.js');
 var eventEmitter = null;
+
+var bluetooth = new Bluetooth();
 
 electron.crashReporter.start();
 
@@ -39,6 +42,22 @@ app.on('ready', function onReady() {
           }
         }
       }));
+    });
+
+    eventEmitter.on('bluetooth-list-request', function(res, data) {
+      console.log(data);
+      bluetooth.list(function(data) {
+        eventEmitter.emit('bluetooth-list-request', JSON.stringify({
+          data: {
+            type: 'bluetooth-list-request',
+            id: '001',
+            attributes: {
+              message: 'List of the Bluetooth interfaces',
+              info: data
+            }
+          }
+        }));
+      });
     });
 
     delete mainWindow.module;
