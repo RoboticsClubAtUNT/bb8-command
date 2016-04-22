@@ -22,17 +22,13 @@
       </td>
     </tr>
   </table>
-  <button type="button" name="button">I have succesfully connected!</button>
+  <button type="button" name="button">Next Step</button>
 {{/step-card}}
 {{#step-card number="2" text="Select the Appropriate Bluetooth Port" classNames="step-card"}}
   <div>
     Have the user connect to the appropriate bluetooth port.
   </div>
-  <select class="" name="">
-    <option value="option">option</option>
-    <option value="option">option</option>
-    <option value="option">option</option>
-  </select>
+  {{bluetooth-dropdown bluetoothPort="Select Bluetooth Port"}}
   <button type="button" name="button">Connect</button>
 {{/step-card}}
 {{#step-card number="3" text="Select Mode" classNames="step-card"}}

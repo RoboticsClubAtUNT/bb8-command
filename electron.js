@@ -44,19 +44,19 @@ app.on('ready', function onReady() {
       }));
     });
 
-    eventEmitter.on('bluetooth-list-request', function(res, data) {
+    eventEmitter.on('bluetooth-list', function(res, data) {
       console.log(data);
       bluetooth.list(function(data) {
-        eventEmitter.emit('bluetooth-list-request', JSON.stringify({
+        eventEmitter.emit('bluetooth-list', {
           data: {
-            type: 'bluetooth-list-request',
+            type: 'bluetooth-list',
             id: '001',
             attributes: {
-              message: 'List of the Bluetooth interfaces',
+              message: 'List of the Bluetooth ports',
               info: data
             }
           }
-        }));
+        });
       });
     });
 

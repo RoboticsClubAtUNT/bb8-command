@@ -52,3 +52,38 @@
     padding-top: 15px;
   }
 }
+
+
+
+.bluetooth-dropdown {
+  &-btn {
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    font-family: "Roboto Mono", sans-serif;
+    font-weight: bold;
+    span {
+      width: 100%;
+    }
+  }
+  &-items {
+    border: #ddd thin solid;
+    border-top: none;
+  }
+  &-item {
+    padding: 10px;
+    border-bottom: #ddd thin solid;
+    transition: background 0.2s, color 0.2s;
+    font-family: "Roboto Mono", sans-serif;
+    cursor: pointer;
+
+    &:last-child {
+      border: none;
+    }
+    &:hover {
+      background: #f4f4f4;
+    }
+  }
+}

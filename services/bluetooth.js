@@ -2,6 +2,16 @@
 
 const exec = require('child_process').exec;
 
+function cleanArray(original) {
+  var newArray = new Array();
+  original.forEach(function(value) {
+    if (value) {
+      newArray.push(value);
+    }
+  });
+  return newArray;
+}
+
 module.exports = class Bluetooth {
   constructor() {
 
@@ -15,15 +25,7 @@ module.exports = class Bluetooth {
 
     const child = exec(command, function(err, stdout, stderr) {
       var items = stdout.split('\n');
-        items.forEach(function(value) {
-          console.log(value);
-        });
-        // console.log(`stdout: ${items}`);
-        // console.log(`stderr: ${stderr}`);
-        // if (!err) {
-        //   console.log(`ERROR: ${err}`);
-        // }
-        callback(items);
+      callback(cleanArray(items));
     });
   }
 }

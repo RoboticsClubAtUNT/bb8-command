@@ -1,0 +1,21 @@
+<!-- {{yield}} -->
+<button class="bluetooth-dropdown-btn" {{action 'toggleList'}}>
+  <span>{{bluetoothPort}}</span>
+  {{#if dropdownIsShowing}}
+    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+  {{else}}
+    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+  {{/if}}
+</button>
+
+{{#if dropdownIsShowing}}
+<div class="bluetooth-dropdown-items">
+  {{#each bluetoothItems as |port|}}
+    <div class="bluetooth-dropdown-item" {{action 'setBluetoothPort' port}}>
+      {{port}}
+    </div>
+  {{else}}
+    Nothing to show
+  {{/each}}
+</div>
+{{/if}}

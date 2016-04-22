@@ -41,6 +41,7 @@
     "ember-export-application-global": "^1.0.5",
     "ember-inspector": "1.9.5",
     "ember-load-initializers": "^0.5.1",
+    "ember-power-select": "0.10.0-beta.13",
     "ember-remarkable": "3.0.0",
     "ember-resolver": "^2.0.3",
     "loader.js": "^4.0.1"
